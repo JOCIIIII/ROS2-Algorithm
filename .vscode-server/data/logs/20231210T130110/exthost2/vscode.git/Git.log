@@ -1,0 +1,153 @@
+2023-12-10 13:01:27.866 [info] Log level: Info
+2023-12-10 13:01:27.866 [info] Validating found git in: "git"
+2023-12-10 13:01:27.866 [info] Using git "2.34.1" from "git"
+2023-12-10 13:01:27.866 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:01:27.866 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:01:27.866 [info] > git rev-parse --show-toplevel [2ms]
+2023-12-10 13:01:27.866 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2023-12-10 13:01:27.866 [info] Open repository: /home/user/px4_ros_ws/src/px4_msgs
+2023-12-10 13:01:27.866 [info] > git config --get commit.template [6ms]
+2023-12-10 13:01:27.866 [info] > git rev-parse --show-toplevel [2ms]
+2023-12-10 13:01:27.866 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:01:27.866 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/release/1.14 refs/remotes/release/1.14 [30ms]
+2023-12-10 13:01:27.866 [info] > git rev-parse --show-toplevel [26ms]
+2023-12-10 13:01:27.872 [info] > git status -z -uall [7ms]
+2023-12-10 13:01:27.881 [info] > git rev-parse --git-dir --git-common-dir [9ms]
+2023-12-10 13:01:27.884 [info] Open repository: /home/user/.oh-my-zsh
+2023-12-10 13:01:27.895 [info] > git config --get commit.template [13ms]
+2023-12-10 13:01:27.895 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:01:27.895 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:01:27.895 [info] > git config --get commit.template [6ms]
+2023-12-10 13:01:27.915 [info] > git rev-parse --show-toplevel [9ms]
+2023-12-10 13:01:27.915 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:01:27.916 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/release/1.14 refs/remotes/release/1.14 [15ms]
+2023-12-10 13:01:27.928 [info] > git status -z -uall [6ms]
+2023-12-10 13:01:27.929 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [15ms]
+2023-12-10 13:01:27.937 [info] > git rev-parse --show-toplevel [10ms]
+2023-12-10 13:01:27.938 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:01:27.996 [info] > git status -z -uall [60ms]
+2023-12-10 13:01:28.013 [info] > git config --get commit.template [7ms]
+2023-12-10 13:01:28.014 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:01:28.051 [info] > git status -z -uall [31ms]
+2023-12-10 13:01:28.369 [info] > git show --textconv :msg/TimesyncStatus.msg [15ms]
+2023-12-10 13:01:28.369 [info] > git ls-files --stage -- /home/user/px4_ros_ws/src/px4_msgs/msg/TimesyncStatus.msg [8ms]
+2023-12-10 13:01:28.375 [info] > git check-ignore -v -z --stdin [7ms]
+2023-12-10 13:01:28.376 [info] > git cat-file -s 71e84e85ab51178670339a5309da5a908518a1bf [2ms]
+2023-12-10 13:01:29.303 [info] > git check-ignore -v -z --stdin [1ms]
+2023-12-10 13:01:31.452 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-10 13:01:32.363 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-10 13:01:37.220 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-10 13:01:38.109 [info] > git check-ignore -v -z --stdin [6ms]
+2023-12-10 13:01:38.111 [info] > git check-ignore -v -z --stdin [3ms]
+2023-12-10 13:01:39.162 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-10 13:01:39.723 [info] > git check-ignore -v -z --stdin [1ms]
+2023-12-10 13:01:45.144 [info] > git rev-parse --show-toplevel [2ms]
+2023-12-10 13:01:45.144 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:02:50.701 [warning] ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/px4_msgs/.git/HEAD'
+2023-12-10 13:02:50.711 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/px4_msgs/.git/config'
+2023-12-10 13:02:50.721 [warning] ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/px4_msgs/.git/HEAD'
+2023-12-10 13:02:50.729 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/px4_msgs/.git/config'
+2023-12-10 13:02:51.351 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-10 13:04:51.125 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:04:51.125 [info] fatal: detected dubious ownership in repository at '/home/user/ROS2-Algorithm'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/user/ROS2-Algorithm
+2023-12-10 13:04:51.693 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:04:51.693 [info] fatal: detected dubious ownership in repository at '/home/user/ROS2-Algorithm'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/user/ROS2-Algorithm
+2023-12-10 13:04:53.732 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:04:53.732 [info] fatal: detected dubious ownership in repository at '/home/user/ROS2-Algorithm'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/user/ROS2-Algorithm
+2023-12-10 13:06:38.380 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:06:38.386 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2023-12-10 13:06:38.391 [info] Open repository: /home/user/px4_ros_ws/src/ROS2-Algorithm
+2023-12-10 13:06:38.405 [info] > git config --get commit.template [8ms]
+2023-12-10 13:06:38.405 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-12-10 13:06:38.415 [info] > git status -z -uall [1ms]
+2023-12-10 13:06:38.429 [info] > git config --get commit.template [6ms]
+2023-12-10 13:06:38.429 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:06:38.435 [info] > git status -z -uall [1ms]
+2023-12-10 13:06:38.912 [info] > git check-ignore -v -z --stdin [1ms]
+2023-12-10 13:06:41.403 [info] > git config --get commit.template [6ms]
+2023-12-10 13:06:41.404 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:06:41.480 [info] > git status -z -uall [70ms]
+2023-12-10 13:08:55.184 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:08:55.184 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:09:30.110 [warning] ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/ROS2-Algorithm/.git/HEAD'
+2023-12-10 13:09:30.120 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/ROS2-Algorithm/.git/config'
+2023-12-10 13:09:30.130 [warning] ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/ROS2-Algorithm/.git/HEAD'
+2023-12-10 13:09:30.140 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/user/px4_ros_ws/src/ROS2-Algorithm/.git/config'
+2023-12-10 13:09:30.739 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-10 13:12:43.744 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-10 13:12:43.744 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-10 13:13:05.365 [info] > git config --get commit.template [8ms]
+2023-12-10 13:13:05.366 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-12-10 13:13:05.403 [info] > git status -z -uall [32ms]
+2023-12-10 13:13:10.770 [info] > git config --get commit.template [8ms]
+2023-12-10 13:13:10.771 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-12-10 13:13:10.806 [info] > git status -z -uall [29ms]
+2023-12-10 13:13:30.030 [info] > git config --get commit.template [7ms]
+2023-12-10 13:13:30.031 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-12-10 13:13:30.067 [info] > git status -z -uall [31ms]
+2023-12-10 13:13:40.304 [info] > git config --get commit.template [6ms]
+2023-12-10 13:13:40.305 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-12-10 13:13:40.340 [info] > git status -z -uall [30ms]
+2023-12-10 13:14:02.673 [info] > git config --get commit.template [5ms]
+2023-12-10 13:14:02.673 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:14:02.710 [info] > git status -z -uall [31ms]
+2023-12-10 13:14:09.504 [info] > git config --get commit.template [7ms]
+2023-12-10 13:14:09.505 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:14:09.541 [info] > git status -z -uall [29ms]
+2023-12-10 13:14:34.051 [info] > git config --get commit.template [6ms]
+2023-12-10 13:14:34.052 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:14:34.087 [info] > git status -z -uall [30ms]
+2023-12-10 13:14:41.559 [info] > git config --get commit.template [6ms]
+2023-12-10 13:14:41.560 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-12-10 13:14:41.596 [info] > git status -z -uall [30ms]
+2023-12-10 13:15:21.504 [info] > git config --get commit.template [6ms]
+2023-12-10 13:15:21.504 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-10 13:15:21.539 [info] > git status -z -uall [29ms]
+2023-12-11 05:48:39.454 [info] > git config --get commit.template [6ms]
+2023-12-11 05:48:39.455 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-11 05:48:39.491 [info] > git status -z -uall [30ms]
+2023-12-11 05:48:49.737 [info] > git config --get commit.template [6ms]
+2023-12-11 05:48:49.738 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-11 05:48:49.773 [info] > git status -z -uall [29ms]
+2023-12-11 05:54:42.159 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-11 05:54:42.159 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-11 05:54:59.286 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-11 05:54:59.286 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-11 05:55:10.052 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-11 05:55:10.052 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-11 05:55:11.716 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-11 05:55:11.716 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-12-11 05:57:08.479 [info] > git rev-parse --show-toplevel [2ms]
+2023-12-11 05:57:08.486 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2023-12-11 05:57:08.492 [info] Open repository: /home/user/px4_ros_ws/src
+2023-12-11 05:57:08.501 [info] > git config --get commit.template [1ms]
+2023-12-11 05:57:08.509 [info] No remotes found in the git config file.
+2023-12-11 05:57:08.511 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-11 05:57:08.521 [info] > git status -z -uall [4ms]
+2023-12-11 05:57:08.545 [info] No remotes found in the git config file.
+2023-12-11 05:57:08.545 [info] > git config --get commit.template [6ms]
+2023-12-11 05:57:08.546 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-11 05:57:08.554 [info] > git status -z -uall [3ms]
+2023-12-11 05:57:09.023 [info] > git check-ignore -v -z --stdin [6ms]
+2023-12-11 05:57:09.024 [info] > git check-ignore -v -z --stdin [1ms]
+2023-12-11 05:58:50.088 [info] > git rev-parse --show-toplevel [1ms]
+2023-12-11 05:58:50.094 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2023-12-11 05:58:50.097 [info] Open repository: /home/user
+2023-12-11 05:58:50.109 [info] No remotes found in the git config file.
+2023-12-11 05:58:50.110 [info] > git config --get commit.template [6ms]
+2023-12-11 05:58:50.110 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2023-12-11 05:58:50.170 [info] > git status -z -uall [55ms] (cancelled)
+2023-12-11 05:58:50.688 [info] > git check-ignore -v -z --stdin [11ms]
+2023-12-11 05:58:50.688 [info] > git check-ignore -v -z --stdin [7ms]
+2023-12-11 05:58:50.688 [info] > git check-ignore -v -z --stdin [1ms]
+2023-12-11 06:00:09.033 [info] > git check-ignore -v -z --stdin [2ms]
+2023-12-11 06:00:37.548 [info] > git check-ignore -v -z --stdin [1ms]
