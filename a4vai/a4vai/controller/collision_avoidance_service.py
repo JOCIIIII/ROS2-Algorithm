@@ -23,7 +23,7 @@ class CollisionAvoidanceService(Node):
     def __init__(self):
         super().__init__('collision_avoidance_service')
         self.qosProfileGen()
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4-001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_Sub_Sensor)
         self.declare_service_client_custom()
         self.timestamp = 0
         

@@ -39,7 +39,7 @@ class DeepSACNode(Node):
         self. qosProfileGen()
         self.response_timestamp = 0
         self.requestFlag = False
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4-001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_Sub_Sensor)
         self.requestTimestamp = 0
         self.start_point = []
         self.goal_point = []
