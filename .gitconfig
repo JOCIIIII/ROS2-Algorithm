@@ -1,5 +1,0 @@
-[user]
-	name = JOCIIIII
-	email = whdydgk07@naver.com
-[credential]
-	helper = "!f() { /home/user/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/node /tmp/vscode-remote-containers-fc4fa634-c470-43df-80e0-80913df51cbe.js git-credential-helper $*; }; f"
