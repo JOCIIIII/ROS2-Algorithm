@@ -1,2 +1,0 @@
-uint64 timestamp
-uint32 waypoint_index
