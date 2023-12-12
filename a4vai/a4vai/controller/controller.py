@@ -539,19 +539,19 @@ class ControllerNode(Node):
         
     def declare_publisher_px4(self):
         #   init PX4 MSG Publisher
-        self.VehicleCommandPublisher_ = self.create_publisher(VehicleCommand, '/px4-001/fmu/in/vehicle_command', self.QOS_Sub_Sensor)
-        self.OffboardControlModePublisher_ = self.create_publisher(OffboardControlMode, '/px4-001/fmu/in/offboard_control_mode', self.QOS_Sub_Sensor)
-        self.TrajectorySetpointPublisher_ = self.create_publisher(TrajectorySetpoint, '/px4-001/fmu/in/trajectory_setpoint', self.QOS_Sub_Sensor)
+        self.VehicleCommandPublisher_ = self.create_publisher(VehicleCommand, '/px4_001/fmu/in/vehicle_command', self.QOS_Sub_Sensor)
+        self.OffboardControlModePublisher_ = self.create_publisher(OffboardControlMode, '/px4_001/fmu/in/offboard_control_mode', self.QOS_Sub_Sensor)
+        self.TrajectorySetpointPublisher_ = self.create_publisher(TrajectorySetpoint, '/px4_001/fmu/in/trajectory_setpoint', self.QOS_Sub_Sensor)
         # self.VehicleLocalPositionPublisher_ = self.create_publisher(VehicleLocalPositionSetpoint, '/fmu/vehicle_local_position_setpoint/in', self.QOS_Sub_Sensor)
-        self.VehicleAttitudeSetpointPublisher_ = self.create_publisher(VehicleAttitudeSetpoint, '/px4-001/fmu/in/vehicle_attitude_setpoint', self.QOS_Sub_Sensor)
+        self.VehicleAttitudeSetpointPublisher_ = self.create_publisher(VehicleAttitudeSetpoint, '/px4_001/fmu/in/vehicle_attitude_setpoint', self.QOS_Sub_Sensor)
         #self.VehicleRatesSetpointPublisher_ = self.create_publisher(VehicleRatesSetpoint, '/fmu/vehicle_rates_setpoint/in', self.QOS_Sub_Sensor)
         print("====== px4 Publisher Open ======")
         
     def declare_subscriber_px4(self):
         #   init PX4 MSG Subscriber
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4-001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
-        self.EstimatorStatesSubscriber_ = self.create_subscription(EstimatorStates, '/fmu/estimator_states/out', self.EstimatorStatesCallback, self.QOS_PX4)
-        self.VehicleAngularVelocitySubscriber_ = self.create_subscription(VehicleAngularVelocity, '/fmu/vehicle_angular_velocity/out', self.VehicleAngularVelocityCallback, self.QOS_PX4)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
+        self.EstimatorStatesSubscriber_ = self.create_subscription(EstimatorStates, '/px4_001/fmu/out/estimator_states', self.EstimatorStatesCallback, self.QOS_PX4)
+        self.VehicleAngularVelocitySubscriber_ = self.create_subscription(VehicleAngularVelocity, '/px4_001/fmu/out/vehicle_angular_velocity', self.VehicleAngularVelocityCallback, self.QOS_PX4)
         print("====== px4 Subscriber Open ======")
     
     def declare_subscriber_gazebo(self):
@@ -748,7 +748,7 @@ class ControllerNode(Node):
         msg.yaw_sp_move_rate = SetYawRate
         
         self.VehicleAttitudeSetpointPublisher_.publish(msg)
-/px4-001/fmu/out/timesync_status
+
     def VehicleLocalPositionSetpointCallback(self, SetPosition, SetVelocity, SetYaw):
         msg = TrajectorySetpoint()
         msg.position = [SetPosition[0], SetPosition[1], SetPosition[2]]
