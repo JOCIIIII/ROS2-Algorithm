@@ -223,6 +223,7 @@ class ControllerNode(Node):
         else : 
             pass
         if self.InitialPositionFlag == True:
+            print("InitialPositionFlag == True")
             if self.map_generation_flag is True :
                 # map_service = MapService()
                 # map_service.RequestMapGeneration(self.map_generation_flag)
@@ -254,11 +255,14 @@ class ControllerNode(Node):
 
             #     Path Planning MODULE
             if self.path_planning_flag is True :
+                print("path_planning_flag is True")
                 planning_service = PathPlanningService()
                 planning_service.RequestPathPlanning(self.start_point, self.goal_point)
                 rclpy.spin_until_future_complete(planning_service, planning_service.future)
+                print("rclpy.spin_until_future_complete(planning_service, planning_service.future)")
                 if planning_service.future.done():
                     try : 
+                        print(" planning_service.future.done")
                         planning_service.result = planning_service.future.result()
                     except Exception as e:
                         planning_service.get_logger().info(
@@ -530,7 +534,7 @@ class ControllerNode(Node):
               
         self.QOS_PX4 = qos_profile = QoSProfile(
             reliability=QoSReliabilityPolicy.BEST_EFFORT,
-            durability=DurabilityPolicy.VOLATILE,
+            durability=QoSDurabilityPolicy.VOLATILE,
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=5)
 

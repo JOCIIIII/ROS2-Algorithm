@@ -39,7 +39,7 @@ class DeepSACNode(Node):
         self. qosProfileGen()
         self.response_timestamp = 0
         self.requestFlag = False
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4-001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
         self.requestTimestamp = 0
         self.start_point = []
         self.goal_point = []
@@ -95,6 +95,12 @@ class DeepSACNode(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
+
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
         
     def TimesyncCallback(self, msg):
         self.response_timestamp = msg.timestamp
@@ -506,6 +512,7 @@ class RRT:
         RawImage = (cv2.imread("/root/ros_ws/src/a4vai/a4vai/path_planning/Map/RawImage.png", cv2.IMREAD_GRAYSCALE))
         RawImageNeo = cv2.rotate(RawImage, cv2.ROTATE_90_CLOCKWISE)
         RawImage2 = cv2.flip(RawImageNeo, 0)
+        print("PathPlanning")
         # RawImage2 = cv2.flip(RawImage, 0)
         Image_New = np.uint8(np.uint8((255 - RawImage2) / 255))
         

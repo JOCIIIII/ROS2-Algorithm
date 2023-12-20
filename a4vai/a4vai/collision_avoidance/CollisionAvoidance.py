@@ -68,8 +68,8 @@ class Collision_Avoidance(Node):
         self.requestFlag = False
         self.CAPeriod = 1/50
         self.response_timestamp = 0
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
-        self.EstimatorStatesSubscriber_ = self.create_subscription(EstimatorStates, '/fmu/estimator_states/out', self.EstimatorStatesCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
+        self.EstimatorStatesSubscriber_ = self.create_subscription(EstimatorStates, '/px4_001/fmu/out/estimator_states', self.EstimatorStatesCallback, self.QOS_PX4)
         self.LidarSubscriber_ = self.create_subscription(LaserScan, '/airsim_node/Typhoon_1/lidar/RPLIDAR_A3', self.LidarCallback, QoSProfile(depth=10, reliability=ReliabilityPolicy.BEST_EFFORT))
         self.CollisionAvoidanceService_ = self.create_service(CollisionAvoidanceSetpoint, 'collision_avoidance', self.CollisionAvoidanceCallback)
         self.CameraSubscriber_ = self.create_subscription(Image, '/airsim_node/Typhoon_1/DptCamera/DepthPerspective', self.CameraCallback, QoSProfile(depth=1, reliability=ReliabilityPolicy.BEST_EFFORT))
@@ -104,7 +104,11 @@ class Collision_Avoidance(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
-        
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
     def CollisionAvoidanceCallback(self, request, response):
         print("===== Request Coliision Avoidance Node =====")
         self.requestTimestamp = request.request_timestamp

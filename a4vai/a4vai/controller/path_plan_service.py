@@ -23,7 +23,7 @@ class PathPlanningService(Node):
     def __init__(self):
         super().__init__('planning_service')
         self.qosProfileGen()
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
         self.declare_service_client_custom()
         self.timestamp = 0
         
@@ -47,7 +47,11 @@ class PathPlanningService(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
-        
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
     def RequestPathPlanning(self, start_point, goal_point):
         self.path_planning_request = PathPlanningSetpoint.Request()
         self.path_planning_request.request_timestamp = self.timestamp

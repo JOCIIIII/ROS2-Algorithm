@@ -23,7 +23,7 @@ class CollisionAvoidanceService(Node):
     def __init__(self):
         super().__init__('collision_avoidance_service')
         self.qosProfileGen()
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4-001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
         self.declare_service_client_custom()
         self.timestamp = 0
         
@@ -47,6 +47,11 @@ class CollisionAvoidanceService(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
         
     def RequestCollisionAvoidance(self):
         print(" Request Collision service in ")

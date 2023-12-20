@@ -200,8 +200,8 @@ class PFGuidModule(Node):
         
     def declare_subscriber_px4(self):
         #   init PX4 MSG Subscriber
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
-        self.EstimatorStatesSubscriber_ = self.create_subscription(EstimatorStates, '/fmu/estimator_states/out', self.EstimatorStatesCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
+        self.EstimatorStatesSubscriber_ = self.create_subscription(EstimatorStates, '/px4_001/fmu/out/estimator_states', self.EstimatorStatesCallback, self.QOS_PX4)
         # self.VehicleAngularVelocitySubscriber_ = self.create_subscription(VehicleAngularVelocity, '/fmu/vehicle_angular_velocity/out', self.VehicleAngularVelocityCallback, self.QOS_Sub_Sensor)
         print("====== px4 Subscriber Open ======")
         
@@ -223,6 +223,11 @@ class PFGuidModule(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
         
     def EstimatorStatesCallback(self, msg):
         #   TimeStamp

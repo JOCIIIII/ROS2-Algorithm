@@ -43,7 +43,7 @@ class NMPC_NET_Node(Node):
         self.qosProfileGen()
         self.requestFlag = False
         self.response_timestamp = 0
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
         self.requestFlag = False
         print(" JBNU Module Param init ")
         self.model_pretrained = onnx.load('/root/ros_ws/src/a4vai/a4vai/collision_avoidance/feedforward.onnx')
@@ -68,7 +68,11 @@ class NMPC_NET_Node(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
-        
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
     def CollisionAvoidanceCallback(self, request, response):
         print("===== Request Coliision Avoidance Node =====")
         self.requestFlag = request.request_collisionavoidance

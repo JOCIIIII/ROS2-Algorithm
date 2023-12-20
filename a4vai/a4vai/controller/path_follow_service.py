@@ -24,7 +24,7 @@ class PathFollowingService(Node):
     def __init__(self):
         super().__init__('following_service')
         self.qosProfileGen()
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_PX4)
         self.declare_service_client_custom()
         self.timestamp = 0
         
@@ -48,7 +48,12 @@ class PathFollowingService(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=10,
             durability=QoSDurabilityPolicy.VOLATILE)
-        
+        self.QOS_PX4 = qos_profile = QoSProfile(
+            reliability=QoSReliabilityPolicy.BEST_EFFORT,
+            durability=QoSDurabilityPolicy.VOLATILE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=5)
+
     def RequestPathFollowing(self, waypoint_x, waypoint_y, waypoint_z):
         self.path_following_request = PathFollowingSetpoint.Request()
         self.path_following_request.request_timestamp = self.timestamp
@@ -66,7 +71,7 @@ class PathFollowingGPRService(Node):
     def __init__(self):
         super().__init__('following_gpr_service')
         self.qosProfileGen()
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_Sub_Sensor)
         self.declare_service_client_custom()
         self.timestamp = 0
         
@@ -108,7 +113,7 @@ class PathFollowingGuidService(Node):
     def __init__(self):
         super().__init__('following_guid_service')
         self.qosProfileGen()
-        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/fmu/time_sync/out', self.TimesyncCallback, self.QOS_Sub_Sensor)
+        self.TimesyncSubscriber_ = self.create_subscription(TimesyncStatus, '/px4_001/fmu/out/timesync_status', self.TimesyncCallback, self.QOS_Sub_Sensor)
         self.declare_service_client_custom()
         self.timestamp = 0
         
